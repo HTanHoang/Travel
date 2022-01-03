@@ -1,0 +1,160 @@
+.slide {
+	background: linear-gradient(
+			to bottom,
+			transparent 55%,
+			rgba(255, 255, 255, 0.32)
+		),
+		url(../img/parallax-2.jpg) no-repeat center;
+	padding-top: 270px;
+	padding-bottom: 216px;
+	text-align: center;
+
+	&-heading {
+		color: $white-color;
+		font-size: 5rem;
+		font-weight: 700;
+		margin-bottom: 26px;
+
+		span {
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+
+			&::after {
+				content: "";
+				height: 6px;
+				position: absolute;
+				right: 0;
+				bottom: 6px;
+				background-color: var(--bg-color);
+				width: 100%;
+				z-index: -1;
+			}
+		}
+	}
+
+	&-description {
+		color: $white-color;
+		font-size: 2rem;
+		margin-bottom: 64px;
+		display: block;
+	}
+
+	&-search-btn {
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+
+		width: 370px;
+		padding: 12px 22px;
+		margin-bottom: 66px;
+
+		border-radius: 20px;
+		background-color: $white-color;
+		cursor: pointer;
+		user-select: none;
+
+		span {
+			font-size: 1.5rem;
+			color: $text-color;
+		}
+
+		i {
+			font-size: 2rem;
+			color: $text-color;
+		}
+	}
+
+	&__history-search {
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+		height: 0;
+
+		position: absolute;
+		top: 102%;
+		left: 0;
+
+		width: 100%;
+		text-align: left;
+		background-color: $white-color;
+		transition: all ease-out 0.2s;
+
+		&.active {
+			visibility: visible;
+			opacity: 1;
+			height: 200px;
+		}
+	}
+
+	&__history-option {
+		font-size: 1.5rem;
+		color: $text-color;
+		padding: 6px 22px;
+
+		&:hover {
+			background-color: $color-btn-1;
+			color: $white-color;
+		}
+	}
+
+	&-list {
+		display: flex;
+		justify-content: center;
+
+		&-item {
+			background-color: rgba(0, 0, 0, 0.21);
+			margin: 0 14px;
+		}
+
+		.slide-link {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 105px;
+			height: 105px;
+
+			img {
+				width: 40px;
+				margin-bottom: 13px;
+			}
+
+			span {
+				color: $white-color;
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	@media (max-width: 1239px) {
+		background-position: top center;
+		&-search-btn {
+			width: 100%;
+		}
+
+		&-list {
+			display: block;
+
+			&-item {
+				display: flex;
+				justify-content: center;
+
+				& + & {
+					margin-top: 28px;
+				}
+			}
+		}
+	}
+
+	// @media (max-width: 479px) {
+
+	@media (max-width: 479px) {
+		padding-bottom: 0;
+
+		&-description {
+			line-height: 1;
+		}
+	}
+}

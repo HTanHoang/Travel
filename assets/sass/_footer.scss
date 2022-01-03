@@ -1,0 +1,180 @@
+.footer {
+	background: url(../img/parallax-7.jpg) no-repeat center / cover;
+	padding: 80px 0;
+
+	.information-header {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+
+		padding-bottom: 60px;
+
+		.box {
+			margin-right: 130px;
+
+			&-title {
+				font-size: 3.6rem;
+				margin: 0;
+			}
+		}
+
+		&-search {
+			margin-bottom: 8px;
+		}
+
+		input {
+			padding: 0 20px;
+			height: 43px;
+			border: none;
+			outline: none;
+			border-radius: 22px;
+			margin-right: 18px;
+			width: 254px;
+		}
+
+		.btn {
+			background-color: #14b9d5;
+			color: $white-color;
+		}
+	}
+
+	.information-contact {
+		background-color: $white-color;
+		padding: 42px;
+		&-content {
+			img {
+				max-width: 150px;
+				margin-bottom: 40px;
+			}
+
+			.information-desc {
+				margin-bottom: 26px;
+			}
+
+			.social-list {
+				display: flex;
+
+				.social-item {
+					margin-right: 16px;
+
+					.social-link {
+						display: block;
+						text-decoration: none;
+						color: $text-color-dark;
+						font-size: 2.6rem;
+					}
+				}
+			}
+		}
+
+		&-item {
+			h3 {
+				font-size: 1.4rem;
+				color: $text-color-dark;
+				font-weight: 700;
+				margin-top: 14px;
+				margin-bottom: 34px;
+			}
+
+			ul {
+				li {
+					display: flex;
+					align-items: center;
+
+					i {
+						font-size: 2rem;
+					}
+				}
+			}
+		}
+	}
+
+	.information-policy {
+		background-color: #14b9d5;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: $white-color;
+		padding: 18px;
+		font-size: 1.2rem;
+	}
+
+	@media (max-width: 1023px) {
+		.information-header {
+			flex-direction: column;
+			align-items: flex-start;
+
+			.box {
+				margin: 0 0 60px;
+			}
+
+			&-search {
+				display: flex;
+				align-items: center;
+				width: 100%;
+
+				input {
+					flex: 1;
+				}
+
+				.btn {
+					width: 25%;
+					height: 100%;
+					line-height: 43px;
+					text-align: center;
+				}
+			}
+		}
+
+		.information-contact {
+			&-content {
+				margin-bottom: 18px;
+
+				.information-desc {
+					margin-bottom: 16px;
+				}
+			}
+
+			&-item {
+				h3 {
+					margin-bottom: 6px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 739px) {
+		.information-header {
+			&-search {
+				display: block;
+
+				input {
+					width: 100%;
+					margin-bottom: 12px;
+				}
+
+				.btn {
+					width: 100%;
+				}
+			}
+		}
+
+		.information-contact {
+			&-content {
+				margin-bottom: 8px;
+			}
+			&-item {
+				h3 {
+					margin-top: 22px;
+				}
+			}
+		}
+
+		.information-policy {
+			flex-direction: column;
+			span + span {
+				margin-top: 36px;
+			}
+		}
+	}
+}

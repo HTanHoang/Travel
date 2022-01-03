@@ -1,0 +1,308 @@
+.header {
+	background-color: rgba(0, 0, 0, 0.12);
+	position: fixed;
+	top: auto;
+	z-index: 999;
+	left: 0;
+	right: 0;
+
+	&-inner {
+		display: flex;
+		align-items: center;
+
+		padding: 24px 65px;
+	}
+
+	&__logo {
+		width: 11%;
+		margin-right: 74px;
+	}
+
+	&__logo-img {
+		max-width: 165px;
+	}
+
+	&__menu {
+		display: flex;
+		align-items: center;
+
+		padding-left: 0;
+		margin-bottom: 0;
+		margin-right: 27px;
+
+		&-item {
+			position: relative;
+
+			&:hover .select {
+				visibility: visible;
+				opacity: 1;
+				height: var(--menu-item);
+				overflow: visible;
+			}
+		}
+
+		&-link {
+			text-decoration: none;
+			font-size: 1.4rem;
+			color: $white-color;
+			padding: 10px 17px;
+			display: block;
+		}
+
+		&-modal {
+			padding: 40px;
+			margin: 0 -15px;
+			background-color: $text-color-dark;
+
+			display: none;
+
+			.menu__modal-item {
+				margin-bottom: 36px;
+
+				h2 {
+					font-size: 2.4rem;
+					color: $white-color;
+					font-weight: 700;
+				}
+
+				.menu-modal-list {
+					padding-left: 16px;
+
+					.menu-modal-option {
+						a {
+							display: block;
+							color: $white-color;
+							font-size: 1.4rem;
+							padding: 8px 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.btn {
+		background-color: $color-btn-1;
+		color: $white-color;
+	}
+
+	&__bar {
+		position: relative;
+		margin-left: auto;
+
+		cursor: pointer;
+
+		&-wrap {
+		}
+
+		i {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 4rem;
+		}
+
+		&-menu {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+
+			transform: translateX(100%);
+			transition: transform ease-out 0.3s;
+
+			width: 344px;
+			padding: 0 15px;
+			overflow-y: auto;
+
+			background-color: $white-color;
+			cursor: default;
+
+			.box {
+				text-align: center;
+				margin-top: 26px;
+				margin-bottom: 20px;
+			}
+
+			.place__list {
+				margin-bottom: 60px;
+			}
+
+			.place__list-item {
+				display: flex;
+				padding: 15px;
+
+				img {
+					max-width: 100px;
+				}
+
+				.btn {
+					$btn-height: 27px;
+					padding: 0 17px;
+					height: $btn-height;
+					line-height: $btn-height;
+				}
+			}
+
+			.place-action {
+				margin-left: 30px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+
+			.place-info {
+				a {
+					text-decoration: none;
+					display: block;
+				}
+
+				.place-link {
+					margin-bottom: 10px;
+					font-size: 2rem;
+					color: $text-color-dark;
+				}
+
+				.place-location {
+					i {
+						color: $text-color;
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+
+		&-slide {
+			position: relative;
+
+			margin: 0 15px;
+
+			&:hover .slide-hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.bar-slide-content {
+				padding: 30px;
+			}
+
+			img {
+				width: 35px;
+				margin-bottom: 142px;
+			}
+
+			.bar-slide-info {
+				color: $white-color;
+
+				h3 {
+					font-size: 2rem;
+					font-weight: 700;
+				}
+
+				span {
+					display: block;
+					font-size: 1.2rem;
+				}
+			}
+
+			.slide-hover {
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				width: 100%;
+				height: 100%;
+
+				opacity: 0;
+				visibility: hidden;
+
+				text-align: center;
+				background-color: $color-btn-1;
+				color: $white-color;
+				transition: all linear 0.4s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				&__heading {
+					margin-bottom: 18px;
+					font-weight: 700;
+				}
+
+				&__list {
+					margin-bottom: 20px;
+				}
+
+				&__item {
+					font-size: 1.4rem;
+
+					a {
+						color: $white-color;
+						padding: 6px;
+						display: block;
+					}
+				}
+
+				.btn {
+					background-color: $white-color;
+					color: $color-btn-1;
+				}
+			}
+		}
+
+		&-closed {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+
+			cursor: pointer;
+
+			i {
+				font-size: 3rem;
+				color: #999;
+			}
+		}
+	}
+
+	@media (max-width: 1239px) {
+		background-color: $text-color-dark;
+
+		&-inner {
+			justify-content: center;
+			flex-direction: column;
+			padding-top: 6px;
+			padding-bottom: 6px;
+		}
+
+		&__logo {
+			margin: auto auto 10px;
+			width: auto;
+		}
+
+		&__menu {
+			display: none;
+
+			&-modal {
+				display: block;
+			}
+		}
+
+		.btn {
+			display: none;
+		}
+
+		&__bar {
+			margin-left: unset;
+
+			&-wrap {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: 1239px) {
+		position: relative;
+	}
+}
+
+.header__bar-menu.active {
+	transform: translateX(0);
+}

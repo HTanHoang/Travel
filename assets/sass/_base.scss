@@ -1,0 +1,172 @@
+* {
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	letter-spacing: 1.5px;
+	line-height: 1.6rem;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.btn {
+	text-decoration: none;
+	font-size: 1.4rem;
+	line-height: $btn-height;
+
+	height: $btn-height;
+	padding: 0 20px;
+	border-radius: 19px;
+
+	display: inline-block;
+}
+
+.select,
+.sub-select {
+	z-index: 999;
+	position: absolute;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+
+	width: 190px;
+	padding-left: 0;
+
+	background-color: $white-color;
+	box-shadow: 0 3px 7px $white-color;
+	transition: opacity ease-out 0.5s, height ease-out 0.4s;
+
+	&-option {
+		&:not(:first-child) {
+			border-top: 1px solid #f1f1f1;
+		}
+	}
+
+	&-option-link {
+		text-decoration: none;
+		font-size: 1.4rem;
+		color: $text-color;
+		padding: 15px 25px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&:hover {
+			background-color: #f7f7f7;
+		}
+
+		span {
+			font-size: 1rem;
+			color: $white-color;
+			padding: 0 3px;
+			display: inline-block;
+			border-radius: 3px;
+		}
+	}
+}
+
+.select {
+	height: 0;
+	left: 0;
+	top: 136%;
+
+	& > .select-option {
+		position: relative;
+
+		&:hover .sub-select {
+			visibility: unset;
+			opacity: 1;
+			overflow: unset;
+		}
+	}
+}
+
+.select::after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	left: 0;
+	width: 100%;
+	height: 22px;
+	z-index: 1;
+}
+
+.sub-select {
+	right: -110%;
+	top: 0;
+}
+
+.sub-select::after {
+	content: "";
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -20px;
+	width: 22px;
+	z-index: -1;
+}
+
+.box {
+	&-caption {
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	&-title {
+		color: $text-color-dark;
+		font-weight: 700;
+		font-size: 2.5rem;
+		display: inline-block;
+
+		span {
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 6px;
+				bottom: 9px;
+				left: 0;
+				background-color: var(--bg-color);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+.text,
+.text2 {
+	color: $text-color;
+	font-size: 1.4rem;
+	line-height: 2;
+}
+
+.text2 {
+	font-size: 1.5rem;
+}
+@keyframes fadeIn {
+	from {
+		transform: scale(0.7);
+	}
+	to {
+		transform: scale(1);
+	}
+}

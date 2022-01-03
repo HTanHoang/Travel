@@ -1,0 +1,31 @@
+.tour {
+	padding: 60px 0;
+
+	&-item {
+		display: flex;
+
+		img {
+			max-width: 50px;
+		}
+	}
+
+	&-info {
+		margin-left: 20px;
+	}
+
+	&-title {
+		font-size: 2.4rem;
+		font-weight: 700;
+		color: $text-color-dark;
+		margin-bottom: 16px;
+	}
+
+	&-desc {
+		margin-bottom: 16px;
+	}
+
+	&-view {
+		font-size: 1.4rem;
+		display: block;
+	}
+}

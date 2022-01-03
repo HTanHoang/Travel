@@ -1,0 +1,41 @@
+.your {
+	margin: 30px 0px;
+	padding-top: 68px;
+	padding-bottom: 63px;
+
+	&-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.box-title {
+		color: $white-color;
+		font-size: 5rem;
+		line-height: 1;
+		margin-right: 134px;
+
+		span {
+			&::after {
+				bottom: 0px;
+			}
+		}
+	}
+
+	.btn {
+		background-color: $white-color;
+		color: #f76570;
+		font-size: 1.4rem;
+	}
+
+	@media (max-width: 1023px) {
+		&-content {
+			flex-direction: column;
+
+			.box-title {
+				margin-right: auto;
+				margin-bottom: 32px;
+			}
+		}
+	}
+}

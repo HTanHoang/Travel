@@ -1,0 +1,25 @@
+.discover {
+	margin-bottom: 60px;
+	&-item {
+		text-align: center;
+		padding: 60px 0;
+
+		.box {
+			margin-bottom: 30px;
+			&-title {
+				color: $white-color;
+				font-size: 3.6rem;
+			}
+		}
+
+		.text {
+			color: $white-color;
+		}
+
+		.btn {
+			background-color: $white-color;
+			padding: 0 40px;
+			color: var(--bg-color);
+		}
+	}
+}
